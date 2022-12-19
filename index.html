@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>GETGO the Random Password Generator</title>
+	<style>
+		body {
+			font-family: monospace;
+			text-align: center;
+			background-color: #cccccc;
+		}
+
+		h1 {
+			color: purple;
+			margin: 50px 0;
+			font-size: 50px;
+			text-shadow: #000000;
+		}
+		h3 {
+			margin: 250px;
+		}
+
+		#generate-button {
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			background-color: purple;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+		#password {
+			font-size: 20px;
+			font-weight: bold;
+			color: purple;
+			margin: 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<h1>GETGO - Random Password Generator</h1>
+	<button id="generate-button">Generate a new Password</button>
+	<br>
+	<br>
+	<p>Your new generated password:</p>
+	<p id="password"></p>
+	
+	<script>
+		const generateButton = document.getElementById('generate-button');
+		const password = document.getElementById('password');
+
+		generateButton.addEventListener('click', () => {
+			let generatedPassword = '';
+			const possibleCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=';
+			
+			for (let i = 0; i < 15; i++) {
+				generatedPassword += possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
+			}
+			
+			password.textContent = generatedPassword;
+		});
+	</script>
+</body>
+<footer>
+	<h3>All rights reserved!
+		This site provides generating randomized passwords which are very hard to decypher , we use numbers , characters and special characters to generate you a strong password!
+	</h3>
+	<br>
+	<h4>Active since 2022 , copyright issues resolved</h4>
+</footer>
+</html>
